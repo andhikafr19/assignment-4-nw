@@ -1,3 +1,4 @@
+-- TRANSACTION
 -- transaction - set autocommit=0
 SET autocommit=0;
 
@@ -20,5 +21,9 @@ savepoint my_savepoint;
 insert into employees values (1709, 'CR', 'Seven', 'x7000', 'cr7@gmail.com', 1, 1002, 'VP');
 rollback to savepoint my_savepoint;
 
+
+-- SUBQUERY
+-- subquery - select
+SELECT * FROM employees WHERE employeeNumber IN (SELECT employeeNumber FROM employees WHERE officeCode > 2);
 
 
